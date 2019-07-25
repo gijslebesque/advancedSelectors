@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <h4>LOGO</h4>
+      <div class="menu-items">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Login</a>
+      </div>
+
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <hr />
+
+    <h1>Descendant selector</h1>
+
+    <section class="container">
+      <p>
+        With <code> .container p {...} </code> we can select all paragraphs of
+        this container.
+      </p>
+
+      <footer>
+        <p>This element will ALSO be selected.</p>
+      </footer>
+    </section>
+
+    <hr />
+    <h1>Direct child selector</h1>
+    <section class="anotherContainer">
+      <p>
+        With <code> .anotherContainer > p {...} </code> we can select only the
+        first child of this container
+      </p>
+
+      <footer>
+        <p>This element will NOT be selected.</p>
+      </footer>
+    </section>
+
+    <hr />
+
+    <h1>Pseudo classes</h1>
+    <ul>
+      <li>Consectetur enim in esse eu nisi.</li>
+      <li>
+        Laborum culpa minim consectetur eu nostrud magna duis nulla adipisicing
+        ad nisi..
+      </li>
+      <li>Dolore incididunt aliqua id consectetur sunt elit voluptate.</li>
+      <li>
+        Nostrud ullamco aliqua mollit enim occaecat et minim labore nisi eu elit
+        dolor.
+      </li>
+      <li>
+        Sunt labore consectetur dolor esse aute enim cupidatat amet ad
+        consequat.
+      </li>
+      <li>
+        Sunt labore consectetur dolor esse aute enim cupidatat amet ad
+        consequat.
+      </li>
+    </ul>
+
+    <hr />
+
+    <h1>User Action Pseudo-classes</h1>
+
+    <p>
+      <code> selector:hover {...}</code> Will change the styling when a user
+      hovers over an element
+    </p>
+
+    <div class="loading">
+      <div class="spinner"></div>
+    </div>
+  </body>
+</html>

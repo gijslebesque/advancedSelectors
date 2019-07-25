@@ -1,0 +1,178 @@
+/* Advanced selectors in css */
+/* 
+
+You already know the three common ways to select elements with css
+    1. htmlTage { }
+    2. .className { } 
+    3. #id { }
+
+However there might be cases where
+
+
+----- Child Selectors ----- 
+    1. Descendant Selector
+
+    .container p { }  -> selects all the p elements which have are nested inside a element with className containter.
+        IMPORTANT: The descendant element does not have to come directly after the ancestor element inside the document tree,
+        such as a parent-child relationship, but may fall anywhere within the ancestor element.
+
+    Example:
+
+    <section class="container">
+        <p>This element will be selected.</p>
+
+        <footer>
+            <p>This element will ALSO be selected.</p>
+        </footer>
+    </section>
+
+2. Direct Child Selector
+
+    .container > p { } -> selects only the paragraphs that are direct children of the .container element
+ 
+    Example:
+
+    <section class="container">
+        <p>This element will be selected.</p>
+
+        <footer>
+            <p>This element will NOT be selected.</p>
+        </footer>
+    </section>
+
+-----  Sibling Selectors ----- 
+
+    1. General Sibling Selector
+
+    h1 ~ p { } -> Selects an element that follows anywhere after the prior element, in which both elements share the same parent.
+
+    Example: 
+
+    <header> 
+        <h1></h1>
+        <p>This element will be selected.</p>
+        <p>This element will ALSO be selected.</p>
+    </header>
+
+    2. Adjacent Sibling Selector
+
+    h1 + p { } -> Selects an element that follows directly after the prior element, in which both elements share the same parent.
+
+    Example: 
+
+    <header> 
+        <h1></h1>
+        <p>This element will be selected.</p>
+        <p>This element will NOT be selected.</p>
+    </header>
+
+
+
+----- Pseudo-classes ----- 
+    Pseudo-classes are similar to regular classes in HTML,
+    however they are not directly stated within the markup, 
+    instead they are dynamically populated as a result of users’ actions or the document structure.
+
+    1. User Action Pseudo-classes
+    Based on a users’ actions different pseudo-classes may be dynamically applied to an element,
+    a:hover {...} -> When an user hovers over an element
+    a:active {...} -> When an user is interacting with an element (like a click event).
+    a:focus {...} -> When an user is focussing on an element. 
+        After hitting tab, for example, and an input field is selected focus will be applied
+
+
+    2. Structural & Position Pseudo-classes.
+    We can use some selectors based on the structure of our html.
+
+    ---- selector:first-child, selector:last-child, selector:only-child, selector:nth-child(n)
+    li:first-child -> Selects the first child.
+ 
+    Example:
+
+    <ul>
+        <li>Only this element will be selected</li>
+        <li>This won't be selected</li>
+        <li>This won't be selected</li>
+    </ul>
+
+    li:last-child -> Selects the last child.
+    
+    Example:
+
+    <ul>
+        <li>This won't be selected</li>
+        <li>This won't be selected</li>
+        <li>Only this element will be selected</li>
+    </ul>
+
+
+    li:only-child -> If a child is alone.
+
+    <ul>
+        <li>This won't be selected</li>
+        <li>This won't be selected</li>
+    </ul>
+    
+    <ul>
+        <li>Only this element will be selected</li>
+    </ul>
+
+    li:nth-child(1)
+
+     <ul>
+        <li>This won't be selected</li>
+        <li>Only this element will be selected</li>
+        <li>This won't be selected</li>
+    </ul>
+    
+    ---- selector:first-of-type, selector:last-of-type, selector:only-of-type, selector:nth-of-type(n)
+    This selector is very similar to the child pseudo selector. 
+    The difference is that of-type selector will match the first element of its element type, 
+    which in HTML is represented by its tagname, even if that element is not the first child of the parent.
+
+    Here's an example to show the difference:
+
+
+    <div class="parent">
+        <h1>Child</h1>   <!-- h1:first-child, h1:first-of-type -->
+        <div>Child</div> <!-- div:nth-child(2), div:first-of-type -->
+        <div>Child</div>
+        <div>Child</div>
+    </div>
+
+    In this case the above h1 is the first child, the first div is the second child.
+    However, the first div is still the first type.
+
+    ---- Advanced usage of selector:nth-of-type(n) / selector:nth-of-child(n)
+    When replacing n with an integer we select a specific element. However, we can also select recurring elements. 
+
+    Example: 
+    li:nth-child(3n) {...}  Will select every 3rd list item.
+    
+    <ul>
+        <li>...</li>
+        <li>...</li>
+        <li>This list item will be selected</li>
+        <li>...</li>
+        <li>...</li>
+        <li>This list item will be selected</li>
+    </ul>
+
+
+    Example: 
+        li:nth-child(odd) {...}  Will select every odd element (we can also use even).
+
+    <ul>
+        <li>...</li>
+        <li>...</li>
+        <li>This list item will be selected</li>
+        <li>...</li>
+        <li>...</li>
+        <li>This list item will be selected</li>
+    </ul>
+
+    
+
+</div>
+    
+*/
